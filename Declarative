@@ -1,22 +1,31 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any // Tells Jenkins to run the Pipeline on any available agent
+    agent any 
+	tools {
+	  maven 'Maven_home'
+	}
     stages {
-        stage('GIT Checkout') { // Logical grouping of steps
-            steps { // Defines the actions to perform within the stage
-                echo 'Check out ' // The actual step (action)
+        stage('GIT Checkout') { 
+            steps { 
+                echo 'Check out ' 
 				git branch: 'main', credentialsId: 'GIT-MAILTODHEENA-CREDENTIALS', url: 'https://github.com/mailtodheena-create/demo.git'
             }
         }
 		
-		stage('Maven Build') { // Logical grouping of steps
-            steps { // Defines the actions to perform within the stage
-                echo 'Hello World from Stage 2' // The actual step (action)
+		stage('Maven Build') { 
+            steps { 
+                echo 'MAven Build Starts....'
+				echo 'Maven Version....'
+				echo $(mvn --version)
+				echo 'Java Version....'	
+				echo $(java --version)
+				mvn build
             }
         }
-		stage('Code Deploy') { // Logical grouping of steps
-            steps { // Defines the actions to perform within the stage
-                echo 'Hello World from Stage 3' // The actual step (action)
+		stage('Code Deploy') { 
+            steps { 
+                echo 'Hello World from Stage 3' 
+				mvn deploy
             }
         }
     }
