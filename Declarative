@@ -8,7 +8,7 @@ pipeline {
         stage('GIT Checkout') { 
             steps { 
                 echo 'Check out ' 
-				git branch: 'main', credentialsId: 'GIT-MAILTODHEENA-CREDENTIALS', url: 'https://github.com/mailtodheena-create/demo.git'
+				git branch: 'main', credentialsId: 'GIT-MAILTODHEENA-CREDENTIALS', url: 'https://github.com/mailtodheena-create/uob-app.git'
             }
         }
 
