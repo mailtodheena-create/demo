@@ -15,7 +15,7 @@ pipeline {
 		 stage('Maven Clean') { 
             steps { 
                 echo 'Maven Clean' 
-				mvn clean
+				sh 'mvn clean'
             }
         }
 		
@@ -26,13 +26,13 @@ pipeline {
 				echo '$(mvn --version)'
 				echo 'Java Version....'	
 				echo '$(java --version)'
-				mvn build
+				sh 'mvn build'
             }
         }
 		stage('Code Deploy') { 
             steps { 
                 echo 'Hello World from Stage 3' 
-				mvn deploy
+				sh 'mvn deploy'
             }
         }
     }
