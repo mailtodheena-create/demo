@@ -6,7 +6,7 @@ node {
 
     // Stage 2: Build Application
     stage('Build') {
-        echo 'Building the application...ssssssssssssss'
+        echo 'Building the application...ssssssss'
     }
 
     // Stage 3: Run Tests
