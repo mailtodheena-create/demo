@@ -1,7 +1,7 @@
 node {
     // Stage 1: Checkout Code
     stage('Checkout') {
-        echo 'Checking out source code...changed1111111'
+        echo 'Checking out source code...'
     }
 
     // Stage 2: Build Application
