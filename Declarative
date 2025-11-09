@@ -32,7 +32,7 @@ pipeline {
 		stage('Code Deploy') { 
             steps { 
                 echo 'Hello World from Stage 3' 
-				sh 'mvn deploy'
+				sh 'mvn package'
             }
         }
     }
