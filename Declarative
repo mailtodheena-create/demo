@@ -2,15 +2,21 @@
 pipeline {
     agent any // Tells Jenkins to run the Pipeline on any available agent
     stages {
-        stage('Step 1') { // Logical grouping of steps
+        stage('GIT Checkout') { // Logical grouping of steps
             steps { // Defines the actions to perform within the stage
-                echo 'Hello World' // The actual step (action)
+                echo 'Check out ' // The actual step (action)
+				git branch: 'main', credentialsId: 'GIT-MAILTODHEENA-CREDENTIALS', url: 'https://github.com/mailtodheena-create/demo.git'
             }
         }
 		
-		stage('Step 2') { // Logical grouping of steps
+		stage('Maven Build') { // Logical grouping of steps
             steps { // Defines the actions to perform within the stage
                 echo 'Hello World from Stage 2' // The actual step (action)
+            }
+        }
+		stage('Code Deploy') { // Logical grouping of steps
+            steps { // Defines the actions to perform within the stage
+                echo 'Hello World from Stage 3' // The actual step (action)
             }
         }
     }
