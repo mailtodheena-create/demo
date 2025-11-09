@@ -11,6 +11,13 @@ pipeline {
 				git branch: 'main', credentialsId: 'GIT-MAILTODHEENA-CREDENTIALS', url: 'https://github.com/mailtodheena-create/demo.git'
             }
         }
+
+		 stage('Maven Clean') { 
+            steps { 
+                echo 'Maven Clean' 
+				mvn clean
+            }
+        }
 		
 		stage('Maven Build') { 
             steps { 
