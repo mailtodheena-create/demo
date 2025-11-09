@@ -1,0 +1,21 @@
+node {
+    // Stage 1: Checkout Code
+    stage('Checkout') {
+        echo 'Checking out source code...'
+    }
+
+    // Stage 2: Build Application
+    stage('Build') {
+        echo 'Building the application...'
+    }
+
+    // Stage 3: Run Tests
+    stage('Test') {
+        echo 'Running tests...'
+    }
+
+    // Stage 4: Deploy Application (Conditional)
+    stage('Deploy') {
+            echo 'Deploying the application...'
+        }
+    }
