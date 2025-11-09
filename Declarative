@@ -29,6 +29,14 @@ pipeline {
 				sh 'mvn compile'
             }
         }
+		stage('Copy The Jar to UAT Server') { 
+            steps { 
+                echo 'Copy the Jar....'
+				scp /var/lib/jenkins/workspace/SaiPipleline/target/my-app-1.0-SNAPSHOT.jar ec2-user@ip-172-31-31-228:/tmp/
+				echo 'Copied....'
+            }
+        }
+
 		stage('Code Deploy') { 
             steps { 
                 echo 'Hello World from Stage 3' 
