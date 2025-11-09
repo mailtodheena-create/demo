@@ -1,0 +1,17 @@
+// Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any // Tells Jenkins to run the Pipeline on any available agent
+    stages {
+        stage('Step 1') { // Logical grouping of steps
+            steps { // Defines the actions to perform within the stage
+                echo 'Hello World' // The actual step (action)
+            }
+        }
+		
+		stage('Step 2') { // Logical grouping of steps
+            steps { // Defines the actions to perform within the stage
+                echo 'Hello World from Stage 2' // The actual step (action)
+            }
+        }
+    }
+}
