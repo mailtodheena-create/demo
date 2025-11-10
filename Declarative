@@ -22,10 +22,7 @@ pipeline {
 		stage('Maven Build') { 
             steps { 
                 echo 'MAven Build Starts....'
-				echo 'Maven Version....'
-				sh '$(mvn --version)'
-				echo 'Java Version....'	
-				sh '$(java --version)'
+				
 				sh 'mvn compile'
             }
         }
