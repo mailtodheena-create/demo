@@ -23,9 +23,9 @@ pipeline {
             steps { 
                 echo 'MAven Build Starts....'
 				echo 'Maven Version....'
-				echo '$(mvn --version)'
+				sh '$(mvn --version)'
 				echo 'Java Version....'	
-				echo '$(java --version)'
+				sh '$(java --version)'
 				sh 'mvn compile'
             }
         }
